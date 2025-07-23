@@ -46,7 +46,7 @@ public class IssueCommentsController {
         }
 
         log.info("Request to add comment for issueId : {} is success.", comment.getIssueId());
-        return ResponseEntity.ok(issueCommentsService.getCommentsByIssueID(comment.getIssueId()));
+        return ResponseEntity.ok(issueCommentsService.getCommentsByAuthor(comment.getAuthor()));
     }
 
     @GetMapping(value = GET_COMMENTS_BY, produces = MediaType.APPLICATION_JSON_VALUE)
