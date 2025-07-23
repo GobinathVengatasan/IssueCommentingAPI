@@ -20,9 +20,13 @@ public class IssueCommentsServiceImpl implements IssueCommentsService {
     @Override
     public void addComment(Comment comment) {
         try {
-            issueCommentsRepository.addComment(comment);
+            if(comment!=null){
+                issueCommentsRepository.addComment(comment);
+            }
+            else throw new IssueCommentingException("Comment object is null");
         }catch (Exception e){
-            log.info("Exception while adding comment for issueId {}, Exception is : {}", comment.getIssueId(), e.getMessage());
+            String issueID = comment == null ? null : comment.getIssueId();
+            log.info("Exception while adding comment for issueId {}, Exception is : {}", issueID, e.getMessage());
             throw new IssueCommentingException(e.getMessage());
         }
     }

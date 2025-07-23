@@ -1,12 +1,14 @@
 package com.addteq.assessment.issuecommentingapi.model;
 
 import jakarta.validation.constraints.NotEmpty;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.Instant;
 import java.util.UUID;
 
 @Data
+@Builder
 public class Comment {
 
     String id;
