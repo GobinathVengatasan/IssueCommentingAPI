@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "d1c3edb0-2afe-4af5-bb15-9dd378781268",
+		"name": "IssueCommentingAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46977363",
+		"_collection_link": "https://cryosat-candidate-13793178-7627849.postman.co/workspace/Gobinath-Vengatasan's-Workspace~0955a82b-b1c2-4a95-818c-192e08a71b26/collection/46977363-d1c3edb0-2afe-4af5-bb15-9dd378781268?action=share&source=collection_link&creator=46977363"
+	},
+	"item": [
+		{
+			"name": "AddComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Gobinath\",\r\n    \"message\": \"Remove unused imports and unused variables.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCommentsByIssueID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/comments?issueId=9491a7ff-e2c5-4bbe-8057-e79801742067",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "issueId",
+							"value": "9491a7ff-e2c5-4bbe-8057-e79801742067"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCommentsByAuthor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/comments?author=gobinath",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "gobinath"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
